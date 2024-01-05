@@ -13,7 +13,7 @@ epoll() works by keeping a list of file descriptors we want to track in the kern
 However, due to having to keep an interest list in kernel, epoll() needs more system calls. There are 3 system calls in epoll().
 - epoll_create() -> to create the interest list of file descriptors in kernel
 - epoll_ctl() -> to modify/delete the item from the list
-- epoll_wait() -> to poll() for the ready file descriptors
+- epoll_wait() -> to poll for the ready file descriptors
 
 Due to these extra system call overhead. It can be faster to use poll() when the number of file descriptors to monitors are much less. Also, poll() being in the POSIX standard is available across the operating systems that support POSIX such as Mac, Windows, Linux, etc.
 
