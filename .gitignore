@@ -6,3 +6,4 @@
 *.DS_Store
 *.data
 no_git_tracking_*.txt
+*.dSYM
