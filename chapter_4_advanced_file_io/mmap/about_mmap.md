@@ -11,4 +11,7 @@ mmap() does mapping in two main modes, MAP_PRIVATE and MAP_SHARED. With MAP_PRIV
 
 mmap() provides more detailed contorls, such as mapping the memory which doesn't have any correspondence to the real file. Which means it is just an area of allocated memrory. Internally malloc() function of libc uses mmap() like this to allocate the memory. Kernel just maps the dev/zero in such mode.
 
-mmap() has various protection mode (read, write, execute). It can even map the memory to allow the pages to be executed as it's own program.
+mmap() has various protection mode (read, write, execute). It can even map the memory to allow the pages to be executed although that may require parsing the binary (ELF as per linux ABI) etc. See follwing discussions: 
+- [Can I exec an entirely new process without an executable file?](https://unix.stackexchange.com/questions/230472/can-i-exec-an-entirely-new-process-without-an-executable-file)
+- [How can one use exec() to execute a file stored in a buffer?](https://www.reddit.com/r/C_Programming/comments/ycrmao/how_can_one_use_exec_to_execute_a_file_stored_in/)
+- [Memory map executable code boilerplate (with mmap)](https://gist.github.com/rLinks234/6c7000fda4d2ab4c6b8bc52479b03353)
