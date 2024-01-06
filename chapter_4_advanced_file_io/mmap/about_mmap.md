@@ -15,3 +15,5 @@ mmap() has various protection mode (read, write, execute). It can even map the m
 - [Can I exec an entirely new process without an executable file?](https://unix.stackexchange.com/questions/230472/can-i-exec-an-entirely-new-process-without-an-executable-file)
 - [How can one use exec() to execute a file stored in a buffer?](https://www.reddit.com/r/C_Programming/comments/ycrmao/how_can_one_use_exec_to_execute_a_file_stored_in/)
 - [Memory map executable code boilerplate (with mmap)](https://gist.github.com/rLinks234/6c7000fda4d2ab4c6b8bc52479b03353)
+
+I have written an example program which maps the raw binary to the memeory and runs that. Check that if you are interested :)
