@@ -16,15 +16,10 @@ _start:
     mov rdx, hello_size
     syscall
 
-    ;; exit system call
-    mov rax, SYS_EXIT
-    mov rdi, 0
-    syscall
-
     ret 
 
 
 ;; 10 is a new line char
-hello: db "Hello from Bipin. mmap() and exec assembly..? Hmm... sound like JIT compilation .. Cool!!", 10
+hello: db "This is in assembly. I was mmap() and exec from C program. Hmm... sound like JIT compilation .. Cool!!", 10
 ;; subtract current address to hello to get the size of hello message
 hello_size: equ $ - hello

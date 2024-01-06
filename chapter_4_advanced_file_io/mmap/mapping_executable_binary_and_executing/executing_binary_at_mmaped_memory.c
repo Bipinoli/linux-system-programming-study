@@ -25,5 +25,7 @@ int main() {
     // cast raw executable to the function pointer and call it
     ((void (*)(void)) raw_executable)();
 
+    printf("We are back in our c program!\n");
+
     return 0;
 }
