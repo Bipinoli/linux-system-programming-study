@@ -9,7 +9,7 @@ User can choose to lay the mapping in the memory location of their choice (in th
 
 mmap() does mapping in two main modes, MAP_PRIVATE and MAP_SHARED. With MAP_PRIVATE the modifications to the memory are private to the process. This is done with copy-on-write scheme. With MAP_SHARED the kernel maps the same memeory chunks to the virtual memory of different processes so the mapping is shared. Which means the processes can observe the modificitaions as if they were observing the actual file underneath. This can be used for inter-process communication. Users must specify one of these method to use the mmap(). 
 
-mmap() provides more detailed contorls, such as mapping the memory which doesn't have any correspondence to the real file. Which means it is just an area of allocated memrory. Internally malloc() function of libc uses mmap() like this to allocate the memory. Kernel just maps the dev/zero in such mode.
+mmap() provides more detailed contorls, such as mapping the memory which doesn't have any correspondence to the real file. Which means it is just an area of allocated memrory. Internally malloc() function of libc uses mmap() like this to allocate the memory. On an os without MAP_ANONYMOUS dev/zero file can be mapped which effectively gives the same result. 
 
 mmap() has various protection mode (read, write, execute). It can even map the memory to allow the pages to be executed although that may require parsing the binary (ELF as per linux ABI) etc. See follwing discussions: 
 - [Can I exec an entirely new process without an executable file?](https://unix.stackexchange.com/questions/230472/can-i-exec-an-entirely-new-process-without-an-executable-file)
